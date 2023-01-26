@@ -1,0 +1,129 @@
+
+INDEX---------
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css"
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INTRO</title>
+</head>
+<body>
+    <div class="intro">
+    <h1 class="logo-header">
+        
+        <span class="logo">FATTI</span>
+        <span class="logo">TUDE</span>
+    </h1>
+    </div>
+    <header>
+        FATTITUDE
+    </header>
+        
+    
+    <script src="app.js"></script>
+</body>
+</html>
+
+
+
+STYLE.CSS--------------
+*{
+    margin: 0;
+    padding: auto;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+header{
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 1005;
+    height: 80px;
+}
+
+header h4{
+    position: absolute;
+    left: 10%;
+    bottom: 1rem;
+    font-size: 1.6rem;
+}
+
+
+/*splash screen*/
+.intro{
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #161616;
+    transition: 1s;
+}
+
+.logo-header{
+    position:absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: aliceblue;
+}
+
+.logo{
+    position: relative;
+    display: inline-block;
+    bottom: -20px;
+    opacity: 0;
+}
+
+.logo.active{
+    bottom: 0;
+    opacity: 1;
+    transition: ease-in-out 0.5s ;
+
+}
+
+.logo.fade{
+    bottom: 150%;
+    opacity: 0;
+    transition: ease-in-out;
+}
+
+
+APP.JS-----------------
+let intro = document.querySelector(".intro");
+let logo = document.querySelector(".logo-header");
+let logospan = document.querySelectorAll(".logo");
+
+window.addEventListener("DOMContentLoaded",()=>{
+
+    setTimeout(()=>{
+        logospan.forEach((span,idx)=>{
+            setTimeout(()=>{
+                span.classList.add("active");
+            },(idx+1)*400)
+
+        });
+        
+        setTimeout(()=>{
+            logospan.forEach((span,idx)=>{
+
+                setTimeout(()=>{
+                    span.classList.remove("active");
+                    span.classList.add("fade");
+
+                },(idx+1*50))
+            })
+        },2000);
+
+        setTimeout(() => {
+            intro.style.top = "-100vh";
+        },2300)   
+    })
+
+})

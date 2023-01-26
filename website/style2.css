@@ -1,0 +1,56 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+
+}
+
+.main{
+    width: 100%;
+
+}
+
+nav{
+    width: 100;
+    background-color: rgb(90, 155, 11);
+    height: 80px;
+    line-height: 80px;
+    padding: 0px 100px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo a{
+    font-size: 39px;
+    color: rgb(255, 0, 0);
+    font-weight: bold;
+
+}
+a{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+    transition: 0.3s all ease;
+}
+
+ul{
+    margin: 0px;
+    margin: right;
+}
+ul li{
+    float: left;
+    padding: 0px 10px;
+    list-style: none;
+}
+
+ul li a:hover{
+    color: red;
+}
+
+.header{
+   /* background-image: url('PIZZA.jpg');*/
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
